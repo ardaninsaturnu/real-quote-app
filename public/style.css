@@ -1,0 +1,13 @@
+.font{
+    font-family: 'Josefin Slab', serif;
+    text-align:center;
+    font-size: 40px;
+    font-weight:bold;
+}
+blockquote{
+    font-family: 'Josefin Sans', sans-serif;
+    background:#ccccff;
+    font-size: 30px;
+    font-weight: normal;
+    border-left: 4px solid #4db8ff;
+}
