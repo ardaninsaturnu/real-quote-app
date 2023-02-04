@@ -7,6 +7,6 @@ const server = app.listen( 3000 );
 app.use( express.static( 'public' ) );
 const io = socket( server );
 
-io.on( 'connection', socket => {
+io.on( 'connection', ( socket : any ) => {
   console.log(socket.id)
 });
