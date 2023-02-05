@@ -4,6 +4,7 @@
     "express": "^4.18.2",
     "nodemon": "^2.0.20",
     "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   },
@@ -24,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/ardaninsaturnu/real-quote-app/issues"
   },
-  "homepage": "https://github.com/ardaninsaturnu/real-quote-app#readme"
+  "homepage": "https://github.com/ardaninsaturnu/real-quote-app#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.17"
+  }
 }
