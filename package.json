@@ -11,9 +11,9 @@
   "name": "quotes-app",
   "version": "1.0.0",
   "description": "quote app live time",
-  "main": "server.ts",
+  "main": "server.js",
   "scripts": {
-    "quote": "tsc nodemon",
+    "quote": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

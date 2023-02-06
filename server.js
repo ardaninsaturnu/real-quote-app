@@ -15,13 +15,12 @@ const io = socketIO(server);
 server.listen(3000, () => {
     console.log("Server listening at: 3000");
 });
-// Handling the default route
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+app.use(express_1.default.static('public'));
+app.get('/', function (req, res) {
+    res.sendfile('/public/index.html');
 });
-// Handling the route for admin
-app.get('/admin', (req, res) => {
-    res.sendFile(__dirname + '/admin.html');
+app.get('/admin', function (req, res) {
+    res.sendfile(__dirname + '/public/admin.html');
 });
 // Code for sockets
 io.on('connection', (socket) => {

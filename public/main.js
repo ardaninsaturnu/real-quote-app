@@ -26,12 +26,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const io = __importStar(require("socket.io-client"));
 const socketIo = io.connect('http://localhost:3000');
 const quotes = document.querySelector('#quotes');
+const aquote = document.querySelector('#aquote');
+const qcontent = document.querySelector('#qcontent');
 socketIo.on('news', function (data) {
     socketIo.emit('my other event', { my: 'data' });
 });
 socketIo.on('next', function (data) {
     quotes && quotes.append("<blockquote>" + data.data.quote + "</blockquote>");
 });
+console.log(aquote);
 /*
 $('document').ready(function(){
   //Connecting the socket to host and port
@@ -51,3 +54,12 @@ $('document').ready(function(){
   //Event ends
 
 });*/
+socketIo.on('welcome', function (data) {
+});
+aquote === null || aquote === void 0 ? void 0 : aquote.addEventListener('click', (e) => {
+    console.log(e);
+    let data = qcontent.innerText;
+    console.log(data);
+    socketIo.emit('new', { quote: data });
+    qcontent.innerHTML = '';
+});
