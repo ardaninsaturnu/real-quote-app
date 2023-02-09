@@ -16,11 +16,11 @@ server.listen(3000, () => {
 app.use( express.static('public') );
 
 app.get('/', function( req : any, res :any ){
-  res.sendfile( '/public/index.html');
+  res.sendFile( '/public/index.html');
 })
 
 app.get('/admin', function( req : any, res :any ){
-  res.sendfile( __dirname + '/public/admin.html' );
+  res.sendFile( __dirname + '/public/admin.html' );
 })
 
 // Code for sockets

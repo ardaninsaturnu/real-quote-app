@@ -17,10 +17,10 @@ server.listen(3000, () => {
 });
 app.use(express_1.default.static('public'));
 app.get('/', function (req, res) {
-    res.sendfile('/public/index.html');
+    res.sendFile('/public/index.html');
 });
 app.get('/admin', function (req, res) {
-    res.sendfile(__dirname + '/public/admin.html');
+    res.sendFile(__dirname + '/public/admin.html');
 });
 // Code for sockets
 io.on('connection', (socket) => {

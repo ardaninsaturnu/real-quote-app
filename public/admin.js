@@ -23,12 +23,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.myFunction = void 0;
 const io = __importStar(require("socket.io-client"));
-const socketIo = io.connect('http://localhost:3000');
-const quotes = document.querySelector('#quotes');
-socketIo.on('news', function (data) {
-    socketIo.emit('my other event', { my: 'data' });
-});
-socketIo.on('next', function (data) {
-    quotes && quotes.append("<blockquote>" + data.data.quote + "</blockquote>");
-});
+function myFunction() {
+    const socketIo = io.connect('http://localhost:3000');
+    const aquote = document.querySelector('#aquote');
+    const qcontent = document.querySelector('#qcontent');
+    console.log(aquote);
+    aquote === null || aquote === void 0 ? void 0 : aquote.addEventListener('click', (e) => {
+        console.log(e, 'ardaaa');
+        let data = qcontent.innerText;
+        console.log(data);
+        socketIo.emit('new', { quote: data });
+        qcontent.innerHTML = '';
+    });
+}
+exports.myFunction = myFunction;
