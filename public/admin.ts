@@ -3,8 +3,8 @@ import * as io from "socket.io-client";
 export function myFunction() {
   const socketIo  = io.connect('http://localhost:3000' );
 
-    const aquote : HTMLElement | null = document.querySelector('#aquote');
-    const qcontent : HTMLElement | null = document.querySelector('#qcontent');
+    const aquote : HTMLElement | null = document.getElementById('aquote');
+    const qcontent : HTMLElement | null = document.getElementById('qcontent');
 
     console.log(aquote)
 

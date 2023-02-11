@@ -1,38 +1,15 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.myFunction = void 0;
-const io = __importStar(require("socket.io-client"));
+var io = require("socket.io-client");
 function myFunction() {
-    const socketIo = io.connect('http://localhost:3000');
-    const aquote = document.querySelector('#aquote');
-    const qcontent = document.querySelector('#qcontent');
+    var socketIo = io.connect('http://localhost:3000');
+    var aquote = document.querySelector('#aquote');
+    var qcontent = document.querySelector('#qcontent');
     console.log(aquote);
-    aquote === null || aquote === void 0 ? void 0 : aquote.addEventListener('click', (e) => {
+    aquote === null || aquote === void 0 ? void 0 : aquote.addEventListener('click', function (e) {
         console.log(e, 'ardaaa');
-        let data = qcontent.innerText;
+        var data = qcontent.innerText;
         console.log(data);
         socketIo.emit('new', { quote: data });
         qcontent.innerHTML = '';
