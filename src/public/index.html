@@ -1,17 +1,12 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Quotes</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8" />
+    <title>Socket.io Tailwind App</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<h1>Quotes</h1>
-<ul id="quotes"></ul>
-<form id="quote-form">
-    <input type="text" id="author" placeholder="Author" required />
-    <textarea id="body" placeholder="Quote" required></textarea>
-    <button type="submit">Submit</button>
-</form>
-<script src="/js/client.js"></script>
+<h1 class="text-4xl font-bold text-center">Quotes</h1>
+<div id="quotes"></div>
+<script src="dist/index.js"></script>
 </body>
 </html>
