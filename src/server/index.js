@@ -9,10 +9,10 @@ const http_1 = __importDefault(require("http"));
 const socketIO = require('socket.io');
 // Initializing the app and server
 const app = (0, express_1.default)();
-const server = http_1.default.createServer(app);
-const io = socketIO(server);
+const index = http_1.default.createServer(app);
+const io = socketIO(index);
 // Server listening at 127.0.0.1:3000
-server.listen(3000, () => {
+index.listen(3000, () => {
     console.log("Server listening at: 3000");
 });
 app.use(express_1.default.static('public'));
